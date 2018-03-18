@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<title>Registration Page</title>
+<link rel="stylesheet" type="text/css"  href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+<div classs="container">
+<h1>Registration Page</h1>
+</div>
+<form id="userForm" th:action="@{/user/register}" th:object="{user}" action="#" method="post" class="form-horizontal">
+<label class="control-label col-xs-2" for="email">Email</label>
+<div class="col-xs-10">
+	<input id="email" type="email" title="email" th:field="*{email}" /><span th:if="${#fields.haseErrors('email')}" th:errors="*{email not valid}"></span>
+</div>
+
+</form>
+</body>
+</html>
